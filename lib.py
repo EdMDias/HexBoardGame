@@ -1,16 +1,13 @@
 # Generated code -- CC0 -- No Rights Reserved -- http://www.redblobgames.com/grids/hexagons/
 
-from __future__ import division
-from __future__ import print_function
+#from __future__ import division
+#from __future__ import print_function
 import collections
 import math
 
 
 
 Point = collections.namedtuple("Point", ["x", "y"])
-
-
-
 
 _Hex = collections.namedtuple("Hex", ["q", "r", "s"])
 def Hex(q, r, s):
