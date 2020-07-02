@@ -13,8 +13,8 @@ while True:
     player_on *= -1
     turn(board,player_on)
     if board.check_victory():
-        print(board.board)
+        board.print_board()
         print(f'Player {player_on} won!')
         break
     else:
-        print(board.board)
+        board.print_board()

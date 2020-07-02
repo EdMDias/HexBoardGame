@@ -40,3 +40,10 @@ class Board():
 
     def check_victory(self):
         return sum(self.board[1, :, self.size - 1]) == 1 or sum(self.board[1, self.size - 1, :]) == 1
+
+    def print_board(self):
+        for i in range(self.size):
+            line = ' '*2*i
+            for j in range(self.size):
+                line += '{:4.0f}'.format(self.board[0,i,j])
+            print(line)
