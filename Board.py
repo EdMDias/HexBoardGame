@@ -17,7 +17,7 @@ class Board():
     hex_directions = [[-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0]]
 
     def neighborhood(self, x, y):
-        for i in hex_directions:
+        for i in self.hex_directions:
             if 0 <= i[0]+x < self.size and 0 <= i[1] + y < self.size:
                 yield [i[0] + x, i[1] + y]
 
@@ -38,5 +38,5 @@ class Board():
                     self.board[0, x, y] = 1
                     self.paint_neighbor(x, y)
 
-    def check_victory(self, player):
+    def check_victory(self):
         return sum(self.board[1, :, self.size - 1]) == 1 or sum(self.board[1, self.size - 1, :]) == 1
