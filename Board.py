@@ -47,3 +47,4 @@ class Board():
             for j in range(self.size):
                 line += '{:4.0f}'.format(self.board[0,i,j])
             print(line)
+
