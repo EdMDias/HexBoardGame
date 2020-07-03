@@ -1,4 +1,4 @@
-import Against_bot as AB
+import Against_bot
 import Bot_vs_bot
 import AI
 import two_players_version as tpv
@@ -13,8 +13,9 @@ if m == 1:
     game = tpv.Two_players_game(n)
     game.game()
 elif m == 2:
-    game = AB.Game_Against_Bot(n, AI.random_bot)
+    game = Against_bot.Game_Against_Bot(n, AI.random_bot)
     game.game()
 else:
-    battle_of_random = Bot_vs_bot.Bot_vs_bot(7,AI.random_bot,AI.random_bot)
+    battle_of_random = Bot_vs_bot.Bot_vs_bot(n,AI.random_bot,AI.random_bot)
     battle_of_random.game()
+
