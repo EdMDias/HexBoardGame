@@ -1,16 +1,16 @@
 import Board
 import numpy as np
 
-print('The player 1 plays from left to right and the player -1 plays top down!\n Have fun.')
+print('The player 1 plays top down and the player -1 plays left to right!\nHave fun!!!')
 board = Board.Board(int(input('Choose the size of the board\n')))
 board.print_board()
 
 def turn(board,player):
     while True:
-        position_str = input(f'Player {player}:\nChoose a position to play as two integers (between 0 and {board.size - 1}) separated by a comma\n')
+        position_str = input(f'Player {player}:\nChoose a position to play as two integers (matrix entry between 0 and {board.size - 1}) separated by a comma\n')
         x , y = int(position_str.split(',')[0]),int(position_str.split(',')[1])
         if board.board[0, x, y] == 0:
-            board.place_piece(x, y, player)
+            board.board[0, x, y] = player
             board.check_conn_start(x, y, player)
             break
 
