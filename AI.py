@@ -1,4 +1,3 @@
-# This is the first opponent
 import numpy as np
 
 def random_bot(board):

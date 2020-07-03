@@ -30,19 +30,26 @@ class Board():
             self.paint_neighbor(x, y)
         else:
             for i in self.neighborhood(x, y):
-                if self.board[0, i[0], i[1]] == player and self.board[1, i[0], i[1]] != 0:
-                    self.board[1, x, y] = self.board[1, i[0], i[1]]
+                if self.board[0, i[0], i[1]] == self.board[1, i[0], i[1]] == player:
+                    self.board[1, x, y] = player
                     self.paint_neighbor(x, y)
 
-    def check_victory(self,player):
+    def check_victory(self, player):
         if player == self.player1:
-            return sum(self.board[1, self.size - 1, :]) > 0
+            return (1 in self.board[1, self.size - 1, :])
         else:
-            return sum(self.board[1, :,self.size - 1]) < 0
+            return (-1 in self.board[1, :, self.size - 1])
 
-    def print_board(self):
+    def print_board(self, connection_board=0):
         for i in range(self.size):
             line = ' '*2*i
             for j in range(self.size):
-                line += '{:4.0f}'.format(self.board[0,i,j])
+                line += '{:4.0f}'.format(self.board[0, i, j])
             print(line)
+
+        if connection_board == 1:
+            for i in range(self.size):
+                line = ' '*2*i
+                for j in range(self.size):
+                    line += '{:4.0f}'.format(self.board[1, i, j])
+                print(line)
