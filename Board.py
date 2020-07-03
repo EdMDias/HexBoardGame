@@ -6,8 +6,8 @@ class Board():
     player2 = -1
     # player 1 plays top down (x == 0 to x == self.size - 1) and player -1 plays left right (y == 0 to y == self.size -1 )
 
-    def __init__(self,size):
-        self.board = np.zeros((2,size,size))
+    def __init__(self, size):
+        self.board = np.zeros((2, size, size))
         self.size = size
 
     hex_directions = [[-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0]]
