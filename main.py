@@ -4,6 +4,7 @@ import AI
 import two_players_version as tpv
 
 
+
 print('Choose the type of game you want to try?')
 m = int(input('1 - 2 Players Game\n2 - Player vs Bot Game\n3 - Bot vs Bot Game\n1, 2 or 3?\n'))
 n = int(input('\nAnd what is the size of the board you feel like?\n'))
@@ -18,4 +19,3 @@ elif m == 2:
 else:
     battle_of_random = Bot_vs_bot.Bot_vs_bot(n,AI.random_bot,AI.random_bot)
     battle_of_random.game()
-

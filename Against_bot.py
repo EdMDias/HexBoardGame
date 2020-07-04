@@ -25,7 +25,7 @@ class Game_Against_Bot(Board):
 
     def game(self):
 
-        print('Your pieces are marker with 1 and you play top bottom.\nGood luck!!!')
+        print('Your pieces are marked with 1 and you play top bottom.\nGood luck!!!')
         self.print_board()
 
         player_on = 1 if np.random.randint(0, 2) else -1
