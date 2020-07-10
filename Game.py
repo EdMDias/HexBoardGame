@@ -18,5 +18,5 @@ def game():
         game.game()
     else:
         model = AI.model(n)
-        battle_of_random = Bot_vs_bot.Bot_vs_bot(n,AI.random_bot,AI.NN_bot(n,model).predict_play)
+        battle_of_random = Bot_vs_bot.Bot_vs_bot(n,AI.random_bot,AI.random_bot)
         battle_of_random.game()
